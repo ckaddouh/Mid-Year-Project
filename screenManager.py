@@ -7,9 +7,6 @@ class Memory_Manager(object):
         # Initializes a new battle manager by loading the card images and by initializing tkinter.  
         self.root = tkinter.Tk()
         self.current_screen = None
-        c = Canvas(self.root, height = 300, width = 350, bg = "blue")
-        c.pack()
-        
 
     #def flipCard(self):
         # Uses Canvas to illustrate a card flipping over.  
