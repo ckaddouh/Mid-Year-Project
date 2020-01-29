@@ -8,7 +8,7 @@ class Memory_Manager(object):
         self.root = tkinter.Tk()
         self.current_screen = None
 
-    #def flipCard(self):
+    def flipCard(self):
         # Uses Canvas to illustrate a card flipping over.  
 
 root.mainloop()
