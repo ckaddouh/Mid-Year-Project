@@ -11,12 +11,4 @@ class Memory_Manager(object):
         c = Canvas(self.root, height = 300, width = 350, bg = "blue")
         c.pack()
         
-
-    def displayCards(self):
-        cardDict = {}
-        
-        
-    def flipCard(self):
-        # Uses Canvas to illustrate a card flipping over.  
-
 root.mainloop()
