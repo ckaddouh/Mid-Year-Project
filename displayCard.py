@@ -1,6 +1,8 @@
 # This file selects cards, randomizes them, and displays them to the screen.  
 from CardObject import Card
 import random
+from PIL import Image, ImageTk
+from tkinter import *
 
 class Application():
     def __init__(self, master):
@@ -23,18 +25,20 @@ class Application():
             self.cardDict[name + "x"] = Card(name, cSuit, cNumber)
 
     # Randomize cards
-    self.cardName = []
-    for name in list(cardDict.keys()):
-        self.cardName.append(name)
-    random.shuffle(self.cardName)
+    
 
     # Importing images
     def createWidgets(self):
+        cardName = []
+        for name in list(cardDict.keys()):
+            cardName.append(name)
+        random.shuffle(cardName)
         row = 1
         column = 1
-        for x in range(self.cardName):
-            photo = PhotoImage(file = cardDict[x].imageName)
-            Button(root, text = "", command = cardDict[x].flip, image = photo).grid(row = row, column = column)
+        for x in range(len(cardName)):
+            image1 = Image.open(cardDict[x].imageName)
+            photo = ImageTk.PhotoImage(image1)
+            Button(self, text = "", command = cardDict[x].flip, image = photo).grid(row = row, column = column)
             if row % 6 == 0:
                 row += 1
             column += 1
