@@ -4,7 +4,7 @@ class Start_screen(Frame):
     def __init__(self, master):
         super(Start_screen, self).__init__(master)
 
-        #self.call_on_selcted = call_on_selected
+        self.call_on_selcted = call_on_selected
 
         self.grid()
 
@@ -19,8 +19,8 @@ class Start_screen(Frame):
         start_button= Button(self, text = "START GAME", font = "Courier 16 bold")
         start_button.grid(row = 4, column = 0, sticky = N)
     
-    #def continue_clicked(self):
-        #self.call_on_selcted(self.game.get())
+    def continue_clicked(self):
+        self.call_on_selcted(self.start_button.get())
 
 root = Tk()
 root.title("StartScreen")
