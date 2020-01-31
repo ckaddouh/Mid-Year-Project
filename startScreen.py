@@ -16,14 +16,17 @@ class Start_screen(Frame):
         Label(self).grid(row = 1,column = 0)
         Label(self, text = "Click on two cards. If they match, you get a point!\n If they don't, they'll flip back over. \nTry to remember the cards so you can match all the pairs and win!").grid(row = 2, column = 0, sticky = N)
         Label(self).grid(row = 3, column = 0)
+        Label(self,text = "Username:").grid(row = 4, column = 0, sticky = N)
+        self.username = Entry(self)
+        self.username.grid(row = 5, column = 0)
         start_button= Button(self, text = "START GAME", font = "Courier 16 bold")
-        start_button.grid(row = 4, column = 0, sticky = N)
+        start_button.grid(row = 6, column = 0, sticky = N)
     
     #def continue_clicked(self):
-        #self.call_on_selcted(self.game.get())
+        #self.call_on_selcted(self.start_button.get())
 
 root = Tk()
 root.title("StartScreen")
-root.geometry("410x200")
+root.geometry("410x220")
 app = Start_screen(root)
 root.mainloop()

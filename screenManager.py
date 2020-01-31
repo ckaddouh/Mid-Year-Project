@@ -1,6 +1,8 @@
 # This file will manage the various screens of the game.  
 
 from tkinter import *
+from startScreen import Start_screen
+from CardObject import Card
 
 class Memory_Manager(object):
     def __init__(self, numOfCards):
@@ -8,7 +10,22 @@ class Memory_Manager(object):
         self.root = tkinter.Tk()
         self.current_screen = None
         self.numOfCards = numOfCards
-        c = Canvas(self.root, height = 300, width = 350, bg = "blue")
-        c.pack()
-        
-root.mainloop()
+
+    def start_button(self):
+        self.current_screen.destroy
+        self.game()
+    
+    def game(self):
+        self.root.title("Memory!")
+        self.current_screen = displayCard(self.root, self.close_screen)
+
+    def close_screen(self):
+        self.current_screen.destroy()
+
+    
+def main():
+    battle = Battle_Manager()
+    battle.setup_character_selector()
+    battle.root.mainloop()
+
+main()
