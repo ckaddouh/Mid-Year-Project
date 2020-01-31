@@ -13,6 +13,10 @@ for i in range(12):
     if name not in list(cardDict.keys()):
         cardDict[name] = Card(name, cSuit, cNumber)
         cardDict[name + "2"] = Card(name, cSuit, cNumber)
+<<<<<<< HEAD
 
 # Will this make a merge conflict?  
 
+=======
+#as;dlkfjd
+>>>>>>> b12bcf8bbfacbdfcf04eeaea501b22bf90a10d0f
