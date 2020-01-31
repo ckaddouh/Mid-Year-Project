@@ -14,4 +14,5 @@ for i in range(12):
         cardDict[name] = Card(name, cSuit, cNumber)
         cardDict[name + "2"] = Card(name, cSuit, cNumber)
 
+# Will this make a merge conflict?  
 
