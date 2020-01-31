@@ -7,12 +7,16 @@ suitList = ["C", "D", "H", "S"]
 numberList = ("1 2 3 4 5 6 7 8 9 A J K Q").split()
 
 for i in range(12):
-
     cSuit = random.choice(suitList)
     cNumber = random.choice(numberList)
     name = cSuit + cNumber + ".jpg"
     if name not in list(cardDict.keys()):
-        card = Card(name, cSuit, cNumber)
-        cardDict[name] = card
-    else:
-        continue
+        cardDict[name] = Card(name, cSuit, cNumber)
+        cardDict[name + "2"] = Card(name, cSuit, cNumber)
+<<<<<<< HEAD
+
+# Will this make a merge conflict?  
+
+=======
+#as;dlkfjd
+>>>>>>> b12bcf8bbfacbdfcf04eeaea501b22bf90a10d0f
