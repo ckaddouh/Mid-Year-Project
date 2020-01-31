@@ -1,6 +1,8 @@
 # This file will manage the various screens of the game.  
 
 from tkinter import *
+from startScreen import Start_screen
+from CardObject import Card
 
 class Memory_Manager(object):
     def __init__(self, numOfCards):
