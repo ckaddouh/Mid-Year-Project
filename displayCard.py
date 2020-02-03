@@ -46,6 +46,8 @@ class Application():
             # column += 1
         
             column = column%6 + 1
+            if len(self.cardDict) <= 0:
+                self.summary.get()
 
     def checkMatch(self, card1, card2):'
         if card1.cardID == card2.cardID:
