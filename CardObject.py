@@ -7,5 +7,10 @@ class Card():
         self.number = number
         self.suit = suit
     
-    def flip(self, curShow, curHid):
-    
+    def hide(self):
+        self["image"] = cardBack
+        self["command"] = self.show
+
+    def show(self):
+        self["image"] = self.imageName
+        self["command"] = self.hide

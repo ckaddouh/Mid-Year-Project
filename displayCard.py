@@ -1,7 +1,6 @@
 # This file selects cards, randomizes them, and displays them to the screen.  
 from CardObject import Card
 import random
-from PIL import Image, ImageTk
 from tkinter import *
 
 class Application():
@@ -30,19 +29,28 @@ class Application():
     # Importing images
     def createWidgets(self):
         cardName = []
-        for name in list(cardDict.keys()):
+        for name in list(self.cardDict.keys()):
             cardName.append(name)
         random.shuffle(cardName)
         row = 1
         column = 1
         for x in range(len(cardName)):
-            image1 = Image.open(cardDict[x].imageName)
-            photo = ImageTk.PhotoImage(image1)
-            Button(self, text = "", command = cardDict[x].flip, image = photo).grid(row = row, column = column)
+            cardBack = PhotoImage(file = "purple_back.jpg")
+            image1 = PhotoImage(file = self.cardDict[x].imageName)
+            self.curCard = Button(self, text = "", command = self.cardDict[x].hide, image = photo)
+            self.curCard.grid(row = row, column = column)
             if row % 6 == 0:
                 row += 1
-            column += 1
-            if column % 6 == 0:
-                column
+            # if column % 6 == 0:
+            #     column = 1
+            # column += 1
+        
+            column = column%6 + 1
 
-            # column = column%6 + 1
+    def checkMatch(self, card1, card2):'
+        if card1.cardID == card2.cardID:
+            del(self.cardDict[card1])
+            del(self.cardDict[card2])
+        else:
+            card1.hide()
+            card2.hide()
