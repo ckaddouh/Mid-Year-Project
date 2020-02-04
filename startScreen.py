@@ -4,7 +4,7 @@ class Start_screen(Frame):
     def __init__(self, master):
         super(Start_screen, self).__init__(master)
 
-        self.call_on_selcted = call_on_selected
+        self.call_on_selected = call_on_selected
 
         self.grid()
 
