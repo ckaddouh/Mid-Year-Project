@@ -59,10 +59,3 @@ class Application():
             card1.hide()
             card2.hide()]
 
-def main():
-    root = Tk()
-    root.title("Memory")
-    app = Application(root)
-    root.mainloop()
-
-main()
