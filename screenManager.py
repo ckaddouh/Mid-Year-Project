@@ -9,7 +9,7 @@ class Memory_Manager(object):
         # Initializes a new battle manager by loading the card images and by initializing tkinter.  
         self.root = tkinter.Tk()
         self.current_screen = None
-        self.numOfCards = numOfCards
+        # self.numOfCards = numOfCards
 
     def startscreen(self):
         self.root.title("Welcome! ")
@@ -32,7 +32,7 @@ class Memory_Manager(object):
         self.current_screen.destroy()
 
 def main():
-    memory = memory_Manager()
+    memory = Memory_Manager()
     memory.startscreen()
     memory.root.mainloop()
 
