@@ -2,6 +2,7 @@
 from CardObject import Card
 import random
 from tkinter import *
+import time
 
 class Application():
     def __init__(self, master):
@@ -49,10 +50,19 @@ class Application():
             if len(self.cardDict) <= 0:
                 self.summary.get()
 
-    def checkMatch(self, card1, card2):'
-        if card1.cardID == card2.cardID:
+    def checkMatch(self, card1, card2):
+        if self.card1.cardID == self.card2.cardID:
             del(self.cardDict[card1])
             del(self.cardDict[card2])
         else:
+            time.sleep(2)
             card1.hide()
-            card2.hide()
+            card2.hide()]
+
+def main():
+    root = Tk()
+    root.title("Memory")
+    app = Application(root)
+    root.mainloop()
+
+main()
