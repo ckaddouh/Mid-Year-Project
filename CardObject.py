@@ -8,7 +8,7 @@ class Card():
         self.suit = suit
     
     def hide(self):
-        self["image"] = cardBack
+        self["image"] = self.cardBack
         self["command"] = self.show
 
     def show(self):
