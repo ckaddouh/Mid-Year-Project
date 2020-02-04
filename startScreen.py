@@ -5,6 +5,8 @@ class Start_screen(Frame):
         super(Start_screen, self).__init__(master)
 
         self.call_on_selected = call_on_selected
+        
+        self.call_on_selcted = start_button
 
         self.grid()
 
@@ -23,5 +25,5 @@ class Start_screen(Frame):
         start_button.grid(row = 6, column = 0, sticky = N)
     
     def continue_clicked(self):
-        self.call_on_selcted(self.start_button.get())
+        self.call_on_selcted()
 

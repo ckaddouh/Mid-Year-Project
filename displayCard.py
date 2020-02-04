@@ -10,7 +10,8 @@ class Application():
         self.cardDict = {}
         self.suitList = ["C", "D", "H", "S"]
         self.numberList = ("1 2 3 4 5 6 7 8 9 A J K Q").split()
-        # self.call_on_selected = call_on_next
+        
+        self.call_on_selected = call_on_next
 
         self.createWidgets()
         self.grid()
