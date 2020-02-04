@@ -5,15 +5,15 @@ from startScreen import Start_screen
 from CardObject import Card
 
 class Memory_Manager(object):
-    def __init__(self, numOfCards):
+    def __init__(self):
         # Initializes a new battle manager by loading the card images and by initializing tkinter.  
-        self.root = tkinter.Tk()
+        self.root = Tk()
         self.current_screen = None
-        self.numOfCards = numOfCards
+        self.numOfCards = 24
 
     def startscreen(self):
         self.root.title("Welcome! ")
-        self.current_screen = startScreen()
+        self.current_screen = Start_screen()
 
     def start_button(self):
         self.current_screen.destroy
@@ -32,7 +32,7 @@ class Memory_Manager(object):
         self.current_screen.destroy()
 
 def main():
-    memory = memory_Manager()
+    memory = Memory_Manager()
     memory.startscreen()
     memory.root.mainloop()
 
