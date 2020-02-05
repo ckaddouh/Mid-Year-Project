@@ -39,11 +39,12 @@ class Application():
         random.shuffle(cardName)
         row = 1
         column = 1
-        for x in range(len(cardName)):
+        curCardDict = {}
+        for card in cardName:
             self.cardBack = PhotoImage(file = "purple_back.jpg")
             image1 = PhotoImage(file = self.cardDict[x].imageName)
-            self.curCard = Button(self, text = "", command = self.cardDict[x].hide, image = photo)
-            self.curCard.grid(row = row, column = column)
+            self.curCardDict[card] = Button(self, text = "", command = self.curCardDict[x].hide(self.cardBack), image = image1)
+            self.curCardDict[card].grid(row = row, column = column)
             if row % 6 == 0:
                 row += 1
             # if column % 6 == 0:
@@ -61,12 +62,8 @@ class Application():
         else:
             time.sleep(2)
             card1.hide()
-<<<<<<< HEAD
-            card2.hide()]
-=======
             card2.hide()
 
     def continue_clicked(self):
         self.call_on_selected(self.)
 
->>>>>>> 87f070d9c574fd0c4662787216e04383beda2b84
