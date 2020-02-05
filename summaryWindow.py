@@ -4,7 +4,6 @@ class summary(Frame):
     def __init__(self, master):
         super(summary, self).__init__(master)
 
-
         self.grid()
         
         self.create_widgets()
@@ -21,8 +20,8 @@ class summary(Frame):
         exit_button.grid(row = 3, column = 1, sticky = E)
 
 
-    def retry_clicked(self):
-       self.call_on_selcted(self.start_button.get())
+   def retry_clicked(self):
+       self.start_button.get()
 
     def exit_clicked(self):
-        self.call_on_selcted(self.close_screen.get())
+        self.close_screen.get()
