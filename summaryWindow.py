@@ -4,7 +4,6 @@ class summary(Frame):
     def __init__(self, master):
         super(summary, self).__init__(master)
 
-        self.call_on_selcted = call_on_selected
 
         self.grid()
         
@@ -22,7 +21,7 @@ class summary(Frame):
         exit_button.grid(row = 3, column = 1, sticky = E)
 
 
-   def retry_clicked(self):
+    def retry_clicked(self):
        self.call_on_selcted(self.start_button.get())
 
     def exit_clicked(self):
