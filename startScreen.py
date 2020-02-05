@@ -19,7 +19,7 @@ class Start_screen(Frame):
         Label(self,text = "Username:").grid(row = 4, column = 0, sticky = N)
         self.username = Entry(self)
         self.username.grid(row = 5, column = 0)
-        start_button= Button(self, text = "START GAME", font = "Courier 16 bold")
+        start_button= Button(self, text = "START GAME", font = "Courier 16 bold", command = continue_clicked)
         start_button.grid(row = 6, column = 0, sticky = N)
     
     def continue_clicked(self):

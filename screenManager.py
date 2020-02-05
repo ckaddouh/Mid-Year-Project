@@ -2,7 +2,8 @@
 
 from tkinter import *
 from startScreen import Start_screen
-from CardObject import Card
+from displayCard import Application
+from summaryWindow import summary
 
 class Memory_Manager(object):
     def __init__(self):
@@ -14,20 +15,20 @@ class Memory_Manager(object):
 
     def startscreen(self):
         self.root.title("Welcome! ")
-        self.current_screen = Start_screen()
+        self.current_screen = Start_screen(self.root)
 
     def start_button(self):
-        self.current_screen.destroy
+        self.current_screen.destroy()
         self.game()
     
     def game(self):
         self.root.title("Memory!")
-        self.current_screen = displayCard(self.root, self.close_screen)
+        self.current_screen = Application(self.root)
     
     def summary(self):
-        self.current_screen.destroy
+        self.current_screen.destroy()
         self.root.title("Game Summary")
-        self.current_screen = summaryWindow(self.root, self.close_screen, self.start_button)
+        self.current_screen = summary(self.root)
 
     def close_screen(self):
         self.current_screen.destroy()

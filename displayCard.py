@@ -1,7 +1,8 @@
 # This file selects cards, randomizes them, and displays them to the screen.  
+
+from tkinter import *
 from CardObject import Card
 import random
-from tkinter import *
 import time
 
 class Application():
@@ -10,11 +11,9 @@ class Application():
         self.cardDict = {}
         self.suitList = ["C", "D", "H", "S"]
         self.numberList = ("1 2 3 4 5 6 7 8 9 A J K Q").split()
-        
         self.call_on_selected = call_on_next
-
-        self.createWidgets()
-        self.grid()
+        
+        
 
     # Selects 12 cards
     for i in range(12):
@@ -24,8 +23,12 @@ class Application():
         if name not in list(cardDict.keys()):
             self.cardDict[name] = Card(name, cSuit, cNumber)
             self.cardDict[name + "x"] = Card(name, cSuit, cNumber)
+        else:
+            i-=1
 
     # Randomize cards
+    self.grid()
+    self.createWidgets()
     
 
     # Importing images
@@ -37,7 +40,7 @@ class Application():
         row = 1
         column = 1
         for x in range(len(cardName)):
-            cardBack = PhotoImage(file = "purple_back.jpg")
+            self.cardBack = PhotoImage(file = "purple_back.jpg")
             image1 = PhotoImage(file = self.cardDict[x].imageName)
             self.curCard = Button(self, text = "", command = self.cardDict[x].hide, image = photo)
             self.curCard.grid(row = row, column = column)
@@ -58,5 +61,12 @@ class Application():
         else:
             time.sleep(2)
             card1.hide()
+<<<<<<< HEAD
             card2.hide()]
+=======
+            card2.hide()
 
+    def continue_clicked(self):
+        self.call_on_selected(self.)
+
+>>>>>>> 87f070d9c574fd0c4662787216e04383beda2b84
