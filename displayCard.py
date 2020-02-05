@@ -59,4 +59,3 @@ class Application():
             time.sleep(2)
             card1.hide()
             card2.hide()]
-
