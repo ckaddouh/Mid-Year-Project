@@ -29,7 +29,7 @@ class Memory_Manager (object):
     def summary(self):
         self.current_screen.destroy()
         self.root.title("Game Summary")
-        self.current_screen = summary(self.root)
+        self.current_screen = summary(self.root, self.startscreen, self.close_screen)
     
     def close_screen(self):
         self.current_screen.destroy()
