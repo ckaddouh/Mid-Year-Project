@@ -1,11 +1,14 @@
 from tkinter import *
 
 class summary(Frame):
-    def __init__(self, master):
+    def __init__(self, master, retry, exit):
         super(summary, self).__init__(master)
 
         self.grid()
-        
+
+        self.retry = retry
+        self.exit = exit
+
         self.create_widgets()
 
     def create_widgets(self):
@@ -21,7 +24,7 @@ class summary(Frame):
 
 
    def retry_clicked(self):
-       self.start_button.get()
+       self.retry()
 
     def exit_clicked(self):
-        self.close_screen.get()
+        self.exit()
