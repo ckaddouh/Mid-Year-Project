@@ -21,7 +21,7 @@ class Application():
             imageName = cSuit + cNumber + ".jpg"
             temporaryCardList = self.cardDict.keys()
             if imageName not in list(temporaryCardList):
-                self.cardDict[cSuit+cNumber] = Card(imageName))
+                self.cardDict[cSuit+cNumber] = Card(imageName)
                 self.cardDict[cSuit+cNumber+"x"]=Card(imageName)
                 del(temporaryCardList[cSuit+cNumber])
 

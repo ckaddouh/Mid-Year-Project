@@ -2,7 +2,7 @@
 
 from tkinter import *
 from startScreen import Start_screen
-from displayCard import Application
+from memory import Application
 from summaryWindow import summary
 
 
