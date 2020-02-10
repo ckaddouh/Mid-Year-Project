@@ -70,7 +70,6 @@ class Application():
         self.allCommandRemove()
         time.delay(2)
 
+
     def continue_clicked(self):
         self.call_on_selected()
-
-

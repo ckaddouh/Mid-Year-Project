@@ -65,5 +65,4 @@ class Application():
             card2.hide()
 
     def continue_clicked(self):
-        self.call_on_selected(self.)
-
+        self.call_on_selected()
