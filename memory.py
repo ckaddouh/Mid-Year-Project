@@ -6,7 +6,7 @@ import random
 import time
 
 class Application():
-    def __init__(self, master):
+    def __init__(self, master, call_on_next):
         super(Application, self).__init__(master)
         self.cardDict = {}
         self.suitList = ("C D H S").split()
