@@ -57,18 +57,28 @@ class Application():
         for i in list(self.ButtonDict.keys()):
             self.ButtonDict[i]["command"] = None        
         
-    def listtCardsUp(self):
-        count = 0
+    def listCardsUp(self):
+        cardList = []
         for i in list(self.ButtonDict.keys()):
             if self.ButtonDict[i]["image"] != self.cardBack:
-                count += 1
-        return 
+                cardList += self.ButonDict[i]
+        return cardList
 
     def game(self):
         while countCardsUp <= 2:
             self.allCommandShow()
         self.allCommandRemove()
         time.delay(2)
+        if cardList[0] == cardList[1]:
+            cardList[0]["image"] = ""
+            cardList[1]["image"] = ""
+            del(self.ButtonDict[cardList[0]])
+            del(self.ButtonDict[cardList[0]])
+        else:
+            self.allCommandRemove()
+
+        if len(list(self.cardDict.keys())) <= 0:
+            gameOver = True
 
 
     def continue_clicked(self):

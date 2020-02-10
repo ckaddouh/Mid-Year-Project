@@ -39,5 +39,6 @@ def main():
     memory = Memory_Manager()
     memory.startscreen()
     memory.root.mainloop()
+        
 
 main()
