@@ -13,7 +13,7 @@ class summary(Frame):
 
     def create_widgets(self):
         Label(self, text = "You Win!", font = "Helvetica 20 bold").grid(row = 0, column = 0, sticky = N)
-        Label(self, text = "It took you %s to match %s pairs." % (time, numPairs), font = "Helvetica 20 bold").grid(row = 1, column = 0, sticky = N)
+        Label(self, text = "It took you %s to match %s pairs." % (0, numPairs), font = "Helvetica 20 bold").grid(row = 1, column = 0, sticky = N)
         Label(self).grid(row = 2,column = 0)
 
         retry_button= Button(self, text = "Retry", font = "Courier 16 bold", command = self.retry_clicked)
@@ -23,7 +23,7 @@ class summary(Frame):
         exit_button.grid(row = 3, column = 1, sticky = E)
 
 
-   def retry_clicked(self):
+    def retry_clicked(self):
        self.retry()
 
     def exit_clicked(self):
