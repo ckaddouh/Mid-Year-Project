@@ -6,9 +6,9 @@ class Card():
 
     
     def hide(self):
-        curCardDict[self]["image"] = 
-        curCardDit[self]["command"] = self.show
+        self.ButtonDict[self]["image"] = self.cardBack
+        self.ButtonDict[self]["command"] = self.show
 
     def show(self):
-        self["image"] = self.imageName
-        self["command"] = self.hide
+        self.ButtonDict[self]["image"] = self.imageName
+        self.ButtonDict[self]["command"] = self.hide

@@ -2,7 +2,7 @@
 
 from tkinter import *
 from startScreen import Start_screen
-from displayCard import Application
+from memory import Application
 from summaryWindow import summary
 
 
@@ -24,7 +24,7 @@ class Memory_Manager (object):
 
     def game(self):
         self.root.title("Memory!")
-        self.current_screen = Application(self.root)
+        self.current_screen = Application(self.root, self.summary)
     
     def summary(self):
         self.current_screen.destroy()
@@ -39,5 +39,6 @@ def main():
     memory = Memory_Manager()
     memory.startscreen()
     memory.root.mainloop()
+        
 
 main()
