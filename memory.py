@@ -16,7 +16,7 @@ class Application():
         self.selectCards()
 
     
-    def selectCards():
+    def selectCards(self):
         for i in range(12):
             cSuit = random.choice(self.suitList)
             cNumber = random.choice(self.numberList)
@@ -30,9 +30,9 @@ class Application():
                 break
         self.createWidgets()
     
-    def createWidgets():
+    def createWidgets(self):
         self.cardIDList = list(self.cardDict.keys())
-        random.shuffle(cardIDList)
+        random.shuffle(self.cardIDList)
         row = 1
         column = 1
         self.ButtonDict = {}
@@ -58,25 +58,25 @@ class Application():
             self.ButtonDict[i]["command"] = None        
         
     def listCardsUp(self):
-        cardList = []
+        self.cardList = []
         for i in list(self.ButtonDict.keys()):
             if self.ButtonDict[i]["image"] != self.cardBack:
-                cardList += self.ButonDict[i]
-        return cardList
+                self.cardList += self.ButtonDict[i]
+        return self.cardList
 
     def checkMatch(self):
         while countCardsUp <= 2:
             self.allCommandShow()
         self.allCommandRemove()
         time.delay(2)
-        if cardList[0] == cardList[1]:
-            cardList[0]["image"] = ""
-            cardList[1]["image"] = ""
-            del(self.ButtonDict[cardList[0]])
-            del(self.ButtonDict[cardList[0]])
+        if self.cardList[0] == self.cardList[1]:
+            self.cardList[0]["image"] = ""
+            self.cardList[1]["image"] = ""
+            del(self.ButtonDict[self.cardList[0]])
+            del(self.ButtonDict[self.cardList[0]])
         else:
-            cardList[0]["image"] = self.cardBack
-            cardList[1]["image"] = self.cardBack
+            self.cardList[0]["image"] = self.cardBack
+            self.cardList[1]["image"] = self.cardBack
             self.allCommandRemove()
 
     def runGame(self): 
