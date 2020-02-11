@@ -22,7 +22,7 @@ class Application():
             cNumber = random.choice(self.numberList)
             imageName = cSuit + cNumber + ".jpg"
             temporaryCardList = self.cardDict.keys()
-            self.cardDict[cSuit+cNumber] = Card(imageName))
+            self.cardDict[cSuit+cNumber] = Card(imageName)
             self.cardDict[cSuit+cNumber+"x"]=Card(imageName)
             del(temporaryCardList[cSuit+cNumber])
             
@@ -64,7 +64,7 @@ class Application():
                 cardList += self.ButonDict[i]
         return cardList
 
-    def game(self):
+    def checkMatch(self):
         while countCardsUp <= 2:
             self.allCommandShow()
         self.allCommandRemove()
@@ -75,11 +75,14 @@ class Application():
             del(self.ButtonDict[cardList[0]])
             del(self.ButtonDict[cardList[0]])
         else:
+            cardList[0]["image"] = self.cardBack
+            cardList[1]["image"] = self.cardBack
             self.allCommandRemove()
 
-        if len(list(self.cardDict.keys())) <= 0:
-            gameOver = True
-
+    def runGame(self): 
+        while len(list(self.cardDict.keys())) >= 0:
+            self.checkMatch()
+        Button(self, text = "Game Over")
 
     def continue_clicked(self):
         self.call_on_selected()
