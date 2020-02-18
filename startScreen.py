@@ -1,7 +1,5 @@
 from tkinter import *
 
-
-
 class Start_screen(Frame):
     def __init__(self, master, call_on_next):
         super(Start_screen, self).__init__(master)
@@ -26,5 +24,5 @@ class Start_screen(Frame):
         start_button.grid(row=6, column=0, sticky=N)
 
     def continue_clicked(self):
-        self.call_on_selcted()
+        self.call_on_selected()
 
