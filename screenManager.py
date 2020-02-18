@@ -4,9 +4,9 @@ from tkinter import *
 from startScreen import Start_screen
 from memory import Application
 from summaryWindow import summary
+from cardObject import Card
 
-
-class Memory_Manager (object):
+class Memory_Manager(Frame):
     def __init__(self):
         # Initializes a new battle manager by loading the card images and by initializing tkinter.
         self.root = Tk()
@@ -19,17 +19,17 @@ class Memory_Manager (object):
 
     def start_button(self):
         self.current_screen.destroy()
-        self.game()
+        self.memoryGame()
 
-    def game(self):
+    def memoryGame(self):
         self.root.title("Memory!")
-        self.current_screen = Application(self.root, self.summary)
-    
-    def summary(self):
+        self.current_screen = Application(self.root, self.summaryAction)
+
+    def summaryAction(self):
         self.current_screen.destroy()
         self.root.title("Game Summary")
-        self.current_screen = summary(self.root, self.startscreen, self.close_screen)
-    
+        self.current_screen = summary(self.root, self.startscreen)
+
     def close_screen(self):
         self.current_screen.destroy()
 
@@ -38,6 +38,5 @@ def main():
     memory = Memory_Manager()
     memory.startscreen()
     memory.root.mainloop()
-        
 
 main()
