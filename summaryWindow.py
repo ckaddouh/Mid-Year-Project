@@ -12,7 +12,7 @@ class summary(Frame):
         self.grid()
 
     def create_widgets(self):
-        Label(self, text = "CONGRATULATIONS!").grid(row = 1, column = 1)
+        Label(self, text = "CONGRATULATIONS, "+self.username+"!").grid(row = 1, column = 1)
         Label(self, text = "You won Memory!")
 
     def exit_clicked(self):
