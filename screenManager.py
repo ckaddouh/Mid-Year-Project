@@ -6,6 +6,8 @@ from memory import Application
 from summaryWindow import summary
 from cardObject import Card
 
+game = False
+
 class Memory_Manager(Frame):
     def __init__(self):
         # Initializes a new battle manager by loading the card images and by initializing tkinter.
