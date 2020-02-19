@@ -4,7 +4,7 @@ from tkinter import *
 from startScreen import Start_screen
 from memory import Application
 from summaryWindow import summary
-from cardObject import Card
+from CardObject import Card
 
 game = False
 

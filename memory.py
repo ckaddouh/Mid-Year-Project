@@ -1,7 +1,7 @@
 # This file contains the logistics of the memory game.
 
 from tkinter import *
-from cardObject import Card
+from CardObject import Card
 import random
 import time
 
