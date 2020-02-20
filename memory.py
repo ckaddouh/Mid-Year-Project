@@ -13,6 +13,7 @@ class Application(Frame):
         self.numberList = ("1 2 3 4 5 6 7 8 9 A J Q K").split()
         self.cardUpList = []
         self.cardGone = PhotoImage(file= "deck_of_cards/gray_block.png")
+        self.cardsGoneList = []
         self.call_on_selected = call_on_next
         self.selectCards()
         self.grid()
@@ -26,14 +27,14 @@ class Application(Frame):
                 allCardsList.append(x+i)
         for i in range(12):
             card = random.choice(allCardsList)
-            self.cardDict[card + "."] = Card("deck_of_cards/" + card + ".png", self.ImageDict, self.ButtonDict, self.cardDict, self.cardUpList, False)
-            self.cardDict[card + "x"] = Card("cards_copy/" + card + "x.png", self.ImageDict, self.ButtonDict, self.cardDict, self.cardUpList, False)
+            self.cardDict[card + "."] = Card("deck_of_cards/" + card + ".png", self.ImageDict, self.ButtonDict, self.cardDict, self.cardUpList, False, self.cardsGoneList)
+            self.cardDict[card + "x"] = Card("cards_copy/" + card + "x.png", self.ImageDict, self.ButtonDict, self.cardDict, self.cardUpList, False, self.cardsGoneList)
             allCardsList.remove(card)
 
         self.createWidgets()
 
     def createWidgets(self):
-        Label(self, text = "MEMORY", font="Helvetica 20 bold").grid(row = 0, column = 0, columnspan = 3)
+        Label(self, text = "MEMORY", font="Helvetica 20 bold").grid(row = 0, column = 3, columnspan = 2)
         # self.checkButton.grid(row = 0, column = 6)
         self.cardIDList = list(self.cardDict.keys())
         random.shuffle(self.cardIDList)
@@ -64,8 +65,8 @@ class Application(Frame):
             self.ButtonDict[i]["command"] = ""
 
     def runGame(self):
-        # length = len(list(self.ButtonDict.keys()))
-        Button(self, text="Game Over", command = self.continue_clicked).grid(row=5, column=5)
+        self.endGameButton = Button(self, text="Game Over", command=self.continue_clicked)
+        self.endGameButton.grid(row=5, column=5)
 
     def continue_clicked(self):
         self.call_on_selected()

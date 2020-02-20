@@ -8,9 +8,8 @@ from cardObject import Card
 
 game = False
 
-class Memory_Manager(Frame):
+class Memory_Manager():
     def __init__(self):
-        # Initializes a new battle manager by loading the card images and by initializing tkinter.
         self.root = Tk()
         self.current_screen = None
         self.numOfCards = 24
@@ -30,11 +29,10 @@ class Memory_Manager(Frame):
     def summaryAction(self):
         self.current_screen.destroy()
         self.root.title("Game Summary")
-        self.current_screen = summary(self.root, self.startscreen)
+        self.current_screen = summary(self.root)
 
     def close_screen(self):
         self.current_screen.destroy()
-
 
 def main():
     memory = Memory_Manager()

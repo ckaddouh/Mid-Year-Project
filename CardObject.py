@@ -8,14 +8,14 @@ import time
 # from summaryWindow import summary
 
 class Card():
-    def __init__(self, imageName, imageDict, buttonDict, cardDict, cardsUp, cleared):
+    def __init__(self, imageName, imageDict, buttonDict, cardDict, cardsUp, cleared, cardsGoneList):
         self.ImageDict = imageDict
         self.ButtonDict = buttonDict
         self.imageName = imageName
         self.cardDict = cardDict
         self.cardGone = PhotoImage(file = "deck_of_cards/gray_block.png")
-        self.showing = False
         self.cardBack = PhotoImage(file = "deck_of_cards/purple_back.png")
+        self.cardsGone = cardsGoneList
         if "x" in self.imageName:
             self.cardID = self.imageName[11: 14]
         else:
@@ -45,7 +45,6 @@ class Card():
 
     def checkMatch(self):
         self.listCardsUp()
-        print(self.cardUpList)
         if len(self.cardUpList) > 2:
             card1 = self.cardUpList[0]
             card2 = self.cardUpList[1]
@@ -53,7 +52,7 @@ class Card():
 
             time.sleep(1)
 
-            if card1[0:2] == card2[0:2]:
+            if card1[0:2] == card2[0:2] and card1 != card2:
                 self.ButtonDict[card1]["image"] = self.cardGone
                 self.ButtonDict[card2]["image"] = self.cardGone
                 self.cardDict[card1].cleared = True
@@ -69,6 +68,3 @@ class Card():
                 if self.cardDict[buttonID].cleared:
                     self.ButtonDict[buttonID]["image"] = self.cardGone
                     self.ButtonDict[buttonID]["command"] = ""
-
-
-
