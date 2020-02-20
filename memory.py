@@ -1,5 +1,5 @@
 # This file contains the logistics of the memory game.
-
+# Christina suuuuucks
 from tkinter import *
 from cardObject import Card
 import random
