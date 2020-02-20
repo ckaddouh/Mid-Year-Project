@@ -1,19 +1,16 @@
 # This window displays a summary screen.
 
 from tkinter import *
-
+from startScreen import Start_screen
 class summary(Frame):
-    def __init__(self, master, call_on_next):
+    def __init__(self, master):
         super(summary, self).__init__(master)
-
-        self.call_on_selected = call_on_next
-
         self.create_widgets()
         self.grid()
 
     def create_widgets(self):
-        Label(self, text = "CONGRATULATIONS!").grid(row = 1, column = 1)
-        Label(self, text = "You won Memory!")
+            Label(self, text = "CONGRATULATIONS!", font="Helvetica 20 bold").grid(row = 1, column = 1)
+            Label(self, text = "Come back to play soon!", font="Helvetica 20 bold").grid(row = 2, column = 1)
 
-    def exit_clicked(self):
-        self.call_on_selected()
+            # Label(self, text="NICE TRY!", font="Helvetica 20 bold").grid(row=1, column=1)
+            # Label(self, text="Try and !", font="Helvetica 20 bold").grid(row=2, column=1)
