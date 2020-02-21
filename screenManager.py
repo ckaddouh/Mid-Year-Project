@@ -44,5 +44,5 @@ def main():
     memory.startscreen()
     memory.root.mainloop()
 
-# Run the main. 
+# Run the main.
 main()
