@@ -1,7 +1,7 @@
 # This file contains the logistics of the memory game and interacts with the card object.
 
 from tkinter import *
-from cardObject import Card
+from CardObject import Card
 import random
 
 # Define a class Application which creates a screen and sets initial values for dictionaries, lists, and images.
